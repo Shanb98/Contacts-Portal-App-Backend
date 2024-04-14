@@ -10,7 +10,8 @@ const userSchema = mongoose.Schema({
     password: {
         type: String,
         required : [true, "please add the user password"],
-    }
+    },
+    contacts: [String],
 }, 
 {
     timestamps: true

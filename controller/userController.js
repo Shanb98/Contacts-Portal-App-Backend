@@ -58,20 +58,21 @@ const registerUser = asyncHandler(async (req, res) => {
   
     try {
       const user = await User.findOne({ email });
-  
+      console.log("Number of contacts:", user.contacts.length);
       if (user && (await bcrypt.compare(password, user.password))) {
         const accessToken = jwt.sign(
           {
             user: {
               email: user.email,
               id: user.id,
+              contacts:user.contacts.length,
             },
           },
           process.env.ACCESS_TOKEN_SECRET,
           { expiresIn: "15m" }
         );
   
-        res.status(200).json({ accessToken });
+        res.status(200).json({ accessToken } );
       } else {
         res.status(401);
         throw new Error("Email or password is not valid");
