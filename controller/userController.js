@@ -19,6 +19,7 @@ const registerUser = asyncHandler(async (req, res) => {
       const userExists = await User.findOne({ email });
       if (userExists) {
         res.status(400);
+        res.status(500).json({ message: 'User already registered'});
         throw new Error('User already registered');
       }
   
@@ -74,6 +75,7 @@ const registerUser = asyncHandler(async (req, res) => {
       } else {
         res.status(401);
         throw new Error("Email or password is not valid");
+        
       }
     } catch (error) {
       // Handle errors
