@@ -12,7 +12,7 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors({
-  origin: 'https://contacts-portal-app-backend.onrender.com',
+  origin: 'https://contacts-portal-app-frontend.vercel.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, 
 }));
