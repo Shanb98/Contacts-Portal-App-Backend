@@ -11,8 +11,13 @@ connectiondb();
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({
+  origin: 'https://contacts-portal-app-backend.onrender.com',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, 
+}));
 app.options("*", cors());
+
 
 app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
