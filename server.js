@@ -12,7 +12,7 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors({
-  origin: 'https://contacts-portal-app-frontend-q5y2mvlks-shans-projects-efa8fcf1.vercel.app',
+  origin: 'https://contacts-portal-app-frontend-occgp4bmy-shans-projects-efa8fcf1.vercel.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 }));
