@@ -12,7 +12,7 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors({
-  origin: 'https://quiet-kitten-a700ed.netlify.app',
+  origin: 'https://contacts-portal-app.netlify.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
 }));
